@@ -1,0 +1,42 @@
+
+  <small [hidden]="text.valid || (text.pristine && !myForm.submitted)">
+    Question has to be 15 characters minimum.
+  </small>
+<form #myForm="ngForm" novalidate (submit)="onSubmit(myForm.value, myForm.valid)">
+  <label value="Email">Email</label>
+  <input 
+  type="text" 
+  placeholder="Email"
+  name="email" 
+  required minlength="5" 
+  [(ngModel)]="newPerson.email"
+  #email="ngModel">
+  <input 
+  type="text" 
+  placeholder="Full Name"
+  name="fullname" 
+  required minlength="1" 
+  [(ngModel)]="newPerson.fullname"
+  #fullname="ngModel">
+  <input 
+  type="text" 
+  placeholder="Display Name"
+  name="displayname" 
+  required minlength="1" 
+  [(ngModel)]="newPerson.displayname"
+  #displayname="ngModel">
+  <input 
+  type="password" 
+  placeholder="Password"
+  name="password" 
+  required minlength="1" 
+  [(ngModel)]="newPerson.password"
+  #password="ngModel">
+  <br>
+  <br>
+  <button *ngIf="!myForm.valid" disabled>Create</button>
+  <button type="submit" *ngIf="myForm.valid">Create</button>
+
+</form>
+
+{{ note | json }}
