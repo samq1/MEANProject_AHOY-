@@ -14,6 +14,7 @@ private modals: any[] = [];
 
   constructor(private _http: Http) { }
     
+// adding or creating
 
     addUser(user) {
         console.log('Note:', user);
@@ -44,6 +45,9 @@ private modals: any[] = [];
             .map(response => response.json())
             .toPromise()
     }
+
+// finding user, team, and messages
+
     getUser() {
         return this._http.get('/API/getUser')
             .map(response => this.retreiveAllusers(response.json()))
@@ -60,6 +64,8 @@ private modals: any[] = [];
             .map(response => this.retreiveAllTeams(response.json()))
             .toPromise();
     }
+
+// using these functions for the get function above
 
     retreiveAllusers(newUsers) {
         this.allusers.next(newUsers);
@@ -79,6 +85,32 @@ private modals: any[] = [];
         return this.allmessages;
     }
 
+// CHAT ROOM // \\ // \\ // \\ // \\ // \\
+
+    getChatByRoom(room) {
+        return new Promise((resolve, reject) => {
+            this._http.get('/chat/' + room)
+                .map(res => res.json())
+                .subscribe(res => {
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+                });
+        });
+    }
+
+    saveChat(data) {
+        return new Promise((resolve, reject) => {
+            this._http.post('/chat', data)
+                .map(res => res.json())
+                .subscribe(res => {
+                    resolve(res);
+                }, (err) => {
+                    reject(err);
+                });
+        });
+    }
+// That codes using Promise response instead of Observable.
 
 
 }
