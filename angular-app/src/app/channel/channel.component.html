@@ -1,3 +1,45 @@
-<p>
+<!-- <p>
   channel works!
-</p>
+</p> -->
+<h3>Create a channel</h3>
+<div class="container">
+  <div class="row">
+    <form (submit)="onSubmit()" #userForm="ngForm" class="w-100">
+        <div class="col-6">
+          <div class="form-group">
+            <span name="channelName"></span>
+           Name <input type="text" name="channelName" class="form-control" placeholder="*#e.g.leads" 
+           required 
+           minlength="4" 
+           maxlength="22"
+           [(ngModel)]='NewChannel.channelName'
+            #channelName="ngModel" />
+            <div class="errors">
+              <p *ngIf="channelName.errors && channelName.dirty">Group name is required </p>
+            </div>
+            <div class="form-group">
+              <span name="channelName"></span>
+          Purpose
+          <input type="text" name="purpose" class="form-control" placeholder="What is this channel about?" 
+          required 
+          minlength="4"
+          [(ngModel)]='NewChannel.purpose' 
+          #purpose="ngModel" />
+          <div class="errors">
+            <p *ngIf="purpose.errors && purpose.dirty">Purpose is required </p>
+          </div>
+          Send invites to:
+        <input type="text" name="invited" class="form-control" placeholder="Who would you like to join this channel?" 
+        required  
+        [(ngModel)]='NewChannel.invited'
+        #invited="ngModel" />
+        <div class="errors">
+          <p *ngIf="invited.errors && invited.dirty">Invite someone! </p>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success" *ngIf="!userForm.valid" disabled>Create Channel!</button>
+          <button type="submit" class="btn btn-success" *ngIf="userForm.valid">Create Channel!</button>
+        </div>
+      
+
+
