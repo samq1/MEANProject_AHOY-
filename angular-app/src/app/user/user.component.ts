@@ -24,6 +24,12 @@ export class UserComponent implements OnInit {
       .then(response => this.submitted = response)
     console.log("YAS", this.submitted);
     this._dataService.getUser()
+    this.newPerson = {
+      email: '',
+      fullname: '',
+      displayname: '',
+      password: ''
+    }
   }
 
   ngOnInit() {
