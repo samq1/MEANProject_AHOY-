@@ -1,6 +1,6 @@
 var UserController = require('../controllers/UserController'); 
 var TeamController = require('../controllers/TeamController');
-var MessageController = require('../controllers/MessageController');
+var ChatController = require('../controllers/ChatController');
 var ChannelController = require('../controllers/ChannelController');
 var mongoose = require('mongoose');
 var path = require("path");
@@ -15,7 +15,7 @@ module.exports = function (app) {
     })
 
     app.get('/API/getMessage', function (req, res) {
-        MessageController.getAll(req, res);
+        ChatController.getAll(req, res);
     })
 
     app.get('/API/getChannel', function (req, res) {
