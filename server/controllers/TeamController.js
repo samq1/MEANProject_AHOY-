@@ -5,13 +5,13 @@ module.exports = (function () {
 
     return {
         index: function (req, res) {
-            Tema.find({}, function (err, Team) {
+            Team.find({}, function (err, Team) {
                 res.render('index', {
                     team: Team
                 });
             });
         },
-
+  
 
         createTeam: function (req, res) {
             console.log('HEY, YOURE CREATING....')
