@@ -11,6 +11,7 @@ private modals: any[] = [];
   allusers: BehaviorSubject<any[]> = new BehaviorSubject([]);
   allteams: BehaviorSubject<any[]> = new BehaviorSubject([]);
   allmessages: BehaviorSubject<any[]> = new BehaviorSubject([]);
+  allchannels: BehaviorSubject<any[]> = new BehaviorSubject([]);
 
   constructor(private _http: Http) { }
     
@@ -39,8 +40,8 @@ private modals: any[] = [];
             .toPromise()
     }
     addChannel(channel) {
-        console.log('Note:', channel);
-        console.log('made it!')
+        console.log('Channel:', channel);
+        console.log('made it to channels data service!')
         return this._http.post('/API/createChannel', channel)
             .map(response => response.json())
             .toPromise()
@@ -59,9 +60,14 @@ private modals: any[] = [];
             .toPromise();
     }
 
-    getMessage() {
-        return this._http.get('/API/getMessage')
-            .map(response => this.retreiveAllTeams(response.json()))
+    // getMessage() {
+    //     return this._http.get('/API/getMessage')
+    //         .map(response => this.retreiveAllTeams(response.json()))
+    //         .toPromise();
+    // }
+    getChannel() {
+        return this._http.get('/API/getChannel')
+            .map(response => this.retreiveAllChannels(response.json()))
             .toPromise();
     }
 
@@ -83,6 +89,12 @@ private modals: any[] = [];
         this.allusers.next(newMessage);
         console.log('retreive users,', this.allmessages)
         return this.allmessages;
+    }
+
+    retreiveAllChannels(newChannel) {
+        this.allusers.next(newChannel);
+        console.log('retreive channels,', this.allchannels)
+        return this.allchannels;
     }
 
 // CHAT ROOM // \\ // \\ // \\ // \\ // \\
