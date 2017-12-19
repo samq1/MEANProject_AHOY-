@@ -1,19 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
-  <ul>
-    <li>
-      <a [routerLink]="['home']">Home</a>
-    </li>
-    <li>
-      <a [routerLink]="['createuser']">Add a Question</a>
-    </li>
-    <!-- <li>
-      <a [routerLink]="['home']">logout</a>
-    </li> -->
-  </ul>
   Please Login
   <div class="container">
     <div class="row">
@@ -46,7 +31,7 @@
             </div>
             <div class="form-group">
               <span name="password"></span>
-              <input type="password" name="password" class="form-control" placeholder="*password" required minlength="4" [(ngModel)]='user.password'
+              <input type="password" name="password" class="form-control" placeholder="*password" required minlength="4" [(ngModel)]='newPerson.password'
                 #password="ngModel" />
               <div class="errors">
                 <p *ngIf="password.errors && password.dirty">Password is required</p>
@@ -60,7 +45,3 @@
         </div>
       </form>
     </div>
-
-
-
-    {{ note | json }}

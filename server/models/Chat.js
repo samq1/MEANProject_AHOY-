@@ -1,12 +1,11 @@
 var mongoose = require('mongoose');
 var error;
 var Schema = mongoose.Schema;
-var MessageSchema = new mongoose.Schema({
+var ChatSchema = new mongoose.Schema({
     message: {
         type: String,
         minlength: 1,
-        trim: true,
-        required: true
+        trim: true
     },
     _user: [{
         type: Schema.Types.ObjectId,
@@ -19,5 +18,5 @@ var MessageSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 
-mongoose.model('Message', MessageSchema);
-var Message = mongoose.model('Message')
+mongoose.model('Chat', ChatSchema);
+var Message = mongoose.model('Chat')

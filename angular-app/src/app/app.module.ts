@@ -11,9 +11,11 @@ import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import { MessageComponent } from './message/message.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ChannelComponent } from './channel/channel.component';
+
+import { ChatComponent } from './chat/chat.component';
+
 
 
 
@@ -23,9 +25,9 @@ import { ChannelComponent } from './channel/channel.component';
     PagenotfoundComponent,
     HomeComponent,
     UserComponent,
-    MessageComponent,
     TeamsComponent,
-    ChannelComponent
+    ChannelComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
