@@ -8,12 +8,12 @@ var ChannelSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
-    _user: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    }],
-    invite: {
-        type: Boolean,
+    // _user: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    // }],
+    invited: {
+        type: String,
     },
     purpose: {
         type: String,

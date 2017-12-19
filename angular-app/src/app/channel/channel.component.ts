@@ -17,6 +17,7 @@ export class ChannelComponent implements OnInit {
     invited: ''
   }
   submitted;
+  ChannelList: any = [];
 
   onSubmit() {
     console.log(this.NewChannel);
@@ -31,6 +32,9 @@ export class ChannelComponent implements OnInit {
     }
   }
   ngOnInit() {
+    this._dataService.retreiveAllChannels(this.ChannelList)
+      .subscribe((data) =>{this.ChannelList = data});
+    console.log("THIS IS THE LIST OF CHANNELS:", this.ChannelList);
   }
 
 }

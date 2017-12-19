@@ -6,6 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ChatComponent } from './chat/chat.component';
+import { LoginComponent } from './home/login/login.component';
+import { RegistrationComponent } from './home/registration/registration.component';
+import { ChannelComponent } from './channel/channel.component';
 
 
 
@@ -16,9 +19,12 @@ const routes: Routes = [
   //   component: AppComponent,
   // },
   {
-    path: 'home',
-    pathMatch: 'full',
+    path: '',
     component: HomeComponent,
+    children: [
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegistrationComponent}
+    ]
   },
   {
     path: 'createuser',
@@ -38,11 +44,16 @@ const routes: Routes = [
     children: [],
 
   },
+  // {
+  //   path: '**', //this was preventing my form from channel component from displaying
+  //   pathMatch: 'full',
+  //   component: PagenotfoundComponent,
+  //   children: [],
+  // },
   {
-    path: '**',
+    path: 'createchannel',
     pathMatch: 'full',
-    component: PagenotfoundComponent,
-    children: [],
+    component: ChannelComponent,
   },
 
 ];
