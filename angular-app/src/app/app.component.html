@@ -1,9 +1,8 @@
 
-<a [routerLink]="['/']">Home</a> | <a [routerLink]="['createuser']">Create User</a> | <a [routerLink]="['Team']">Create a Team</a>
-=======
+<a [routerLink]="['/']">Home</a> | <a [routerLink]="['createuser']">Create User</a> | <a [routerLink]="['Team']">Create a Team</a> | <a [routerLink]="['createchannel']">Create a Channel</a>
+
 
 <hr>
-<router-outlet></router-outlet>
 <div style="text-align:center">
     <h1>
         {{ title }}!
@@ -15,5 +14,6 @@
         <li>
             <a [routerLink]="['createuser']">Create a user</a>
         </li>
+        <a [routerLink]="['createchannel']">Create a Channel</a>
     </ul>
 <router-outlet></router-outlet>
