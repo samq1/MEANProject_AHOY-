@@ -4,6 +4,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,12 @@ const routes: Routes = [
     path: 'createuser',
     pathMatch: 'full',
     component: UserComponent,
+    children: [],
+  },
+  {
+    path: 'chat',
+    pathMatch: 'full',
+    component: ChatComponent,
     children: [],
   },
   {
