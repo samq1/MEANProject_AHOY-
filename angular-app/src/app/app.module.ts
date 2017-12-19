@@ -14,6 +14,7 @@ import { UserComponent } from './user/user.component';
 import { MessageComponent } from './message/message.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ChannelComponent } from './channel/channel.component';
+import { NameFormComponent } from './name-form/name-form.component';
 
 
 
@@ -25,7 +26,8 @@ import { ChannelComponent } from './channel/channel.component';
     UserComponent,
     MessageComponent,
     TeamsComponent,
-    ChannelComponent
+    ChannelComponent,
+    NameFormComponent
   ],
   imports: [
     BrowserModule,

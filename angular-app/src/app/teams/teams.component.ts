@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-teams',
@@ -7,8 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
+  newTeam = {
+    reason: '',
+    typeofCrew: '',
+    crewSize:'',
+    role: '',
+  }
+  teamSubmitted;
+
+  onTeamSubmit(){
+    console.log("IN: TeamComponent | onTeamSubmit()")
+    console.log(this.newTeam)
+    this._dataService.addTeam(this.newTeam)
+      .then(response => this.teamSubmitted = response)
+    console.log("IN: TeamComponent | SUBMITTED")
+    this._dataService.getUser()
+  }
   ngOnInit() {
   }
 

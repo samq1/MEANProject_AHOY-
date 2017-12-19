@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
     password: ''
   }
   submitted;
-
+  
   onSubmit() {
     console.log(this.newPerson);
     this._dataService.addUser(this.newPerson)
