@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { TeamsComponent } from './teams/teams.component';
+import { ChatComponent } from './chat/chat.component';
+
 
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   pathMatch: 'full'
+  //   component: AppComponent,
+  // },
   {
-    path: '',
+    path: 'home',
     pathMatch: 'full',
     component: HomeComponent,
   },
@@ -24,6 +32,13 @@ const routes: Routes = [
     component: TeamsComponent,
   },
   {
+    path: 'chat',
+    pathMatch: 'full',
+    component: ChatComponent,
+    children: [],
+
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: PagenotfoundComponent,
@@ -36,4 +51,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

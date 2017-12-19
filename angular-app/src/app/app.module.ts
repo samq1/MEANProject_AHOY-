@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import { MessageComponent } from './message/message.component';
 import { TeamsComponent } from './teams/teams.component';
 import { ChannelComponent } from './channel/channel.component';
-import { NameFormComponent } from './name-form/name-form.component';
+
+import { ChatComponent } from './chat/chat.component';
+
 
 
 
@@ -24,10 +25,9 @@ import { NameFormComponent } from './name-form/name-form.component';
     PagenotfoundComponent,
     HomeComponent,
     UserComponent,
-    MessageComponent,
     TeamsComponent,
     ChannelComponent,
-    NameFormComponent
+    ChatComponent
   ],
   imports: [
     BrowserModule,
