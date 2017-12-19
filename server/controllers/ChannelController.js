@@ -6,7 +6,8 @@ module.exports = (function () {
     return {
         index: function (req, res) {
             Channel.find({}, function (err, channel) {
-                res.json({ 'channels': channel })
+                // res.json({ 'channels': channel })
+                res.json(channel);
             });
         },
 
@@ -16,7 +17,7 @@ module.exports = (function () {
             var channels = new Channel();
             channels.channelName = req.body.channelName;
             channels.purpose = req.body.purpose;
-            channels._user = req.body._user;
+            // channels._user = req.body._user;
             channels.invited = req.body.invited;
             channels.save(function (error, channel) {
                 console.log('THIS CHANNEL IS', channels)
