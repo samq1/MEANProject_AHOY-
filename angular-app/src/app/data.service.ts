@@ -26,8 +26,8 @@ private modals: any[] = [];
     }
 
     addTeam(team) {
-        console.log('Note:', team);
-        console.log('made it!')
+        console.log('Team:', team);
+        console.log('IN: dataService | addTeam()')
         return this._http.post('/API/createTeam', team)
             .map(response => response.json())
             .toPromise()

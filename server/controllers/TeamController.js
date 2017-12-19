@@ -14,11 +14,11 @@ module.exports = (function () {
   
 
         createTeam: function (req, res) {
-            console.log('HEY, YOURE CREATING....')
+            console.log('HEY, YOURE CREATING....A TEAM')
             var teams = new Team();
             teams.teamName = req.body.teamName;
             teams._captain = req.body._captain;
-            teams._user = req.body._user;
+            // teams._user = req.body._user;
             teams.save(function (error, team) {
                 console.log('THIS TEAM IS', teams)
                 if (error) {
