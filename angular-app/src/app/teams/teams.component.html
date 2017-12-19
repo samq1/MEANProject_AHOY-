@@ -1,9 +1,18 @@
 <div class="container center_div">
-  <form  #formData='ngForm' (submit)="onTeamsSubmit()">
+  <form  #formData='ngForm' (submit)="onTeamSubmit()">
+    <input type="hidden" id="_captain" name="_captain">
+    <div class="form-group">
+      <!-- <label for="exampleFormControlSelect2">Crew Name</label> -->
+      <input type="text" class="crewInput"class="form-control" id="validationCustom01" placeholder="Crew Name..." value="Crew Name...." 
+      required
+      name="teamName"
+      #teamName="ngModel"
+      [(ngModel)]="newTeam.teamName">
+    </div>
+
     <div class="form-group">
       <label for="exampleFormControlSelect2">What will your crew use Ahoy for?</label>
-      <select class="form-control" id="exampleFormControlSelect2" 
-      required
+      <select class="selecters" class="form-control" id="exampleFormControlSelect2" 
       name="reason"
       [(ngModel)]="newTeam.reason"
       #reason="ngModel">
@@ -21,8 +30,7 @@
 
     <div class="form-group">
       <label for="exampleFormControlSelect2">What kind of crew is it?</label>
-      <select class="form-control" id="exampleFormControlSelect2"
-      required
+      <select  class="selecters" class="form-control" id="exampleFormControlSelect2"
       name="typeofCrew"
       [(ngModel)]='newTeam.typeofCrew'
       #typeofCrew="ngModel">
@@ -44,8 +52,7 @@
 
     <div class="form-group">
       <label for="exampleFormControlSelect1">How big is your crew?</label>
-      <select class="form-control" id="exampleFormControlSelect1"
-      required
+      <select  class="selecters" class="form-control" id="exampleFormControlSelect1"
       name="crewSize"
       [(ngModel)]="newTeam.crewSize"
       #crewSize="ngModel">
@@ -64,8 +71,7 @@
 
     <div class="form-group">
       <label for="exampleFormControlSelect1">What role do you play in your crew?</label>
-      <select class="form-control" id="exampleFormControlSelect1"
-      required
+      <select  class="selecters" class="form-control" id="exampleFormControlSelect1"
       name="role"
       [(ngModel)]="newTeam.role"
       #role="ngModel">
@@ -82,6 +88,7 @@
         <div class="validations">
           <span *ngIf="!role.valid && !role.touched" class="errors"> Please select a option!</span>
         </div>
+    <br>
     <button type="submit" class="btn btn-info" [disabled]="!formData.form.valid">Submit</button>
   </form>
 </div>
