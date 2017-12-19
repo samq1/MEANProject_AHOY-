@@ -7,7 +7,9 @@ var path = require("path");
 console.log("MADE IT TO ROUTES.JS");
 
 module.exports = function (app) {
-    
+
+// all get routes
+
     app.get('/API/getUser', function (req, res) {
     UserController.getAll(req, res); })
 
@@ -23,9 +25,16 @@ module.exports = function (app) {
         ChannelController.find(req, res);
     })
     
+
+// all post routes
+
     app.post('/API/createUser', function (req, res) {
         UserController.createUser(req, res);
     })
+
+    // app.post('/API/chatting', function (req, res) {
+    //     ChatController.createUser(req, res);
+    // })
 
     app.post('/API/createTeam', function (req, res) {
         TeamController.createTeam(req, res);
