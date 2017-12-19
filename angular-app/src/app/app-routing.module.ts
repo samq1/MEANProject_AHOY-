@@ -4,13 +4,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { TeamsComponent } from './teams/teams.component';
 import { ChatComponent } from './chat/chat.component';
+
 
 
 const routes: Routes = [
   // {
   //   path: '',
-  //   pathMatch: 'full',
+  //   pathMatch: 'full'
   //   component: AppComponent,
   // },
   {
@@ -25,17 +27,23 @@ const routes: Routes = [
     children: [],
   },
   {
+    path: 'Team',
+    pathMatch: 'full',
+    component: TeamsComponent,
+  },
+  {
     path: 'chat',
     pathMatch: 'full',
     component: ChatComponent,
     children: [],
+
   },
   {
     path: '**',
     pathMatch: 'full',
     component: PagenotfoundComponent,
     children: [],
-  }
+  },
 
 ];
 
