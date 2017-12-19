@@ -17,13 +17,19 @@ export class UserComponent implements OnInit {
     password: ''
   }
   submitted;
-
+  
   onSubmit() {
     console.log(this.newPerson);
     this._dataService.addUser(this.newPerson)
       .then(response => this.submitted = response)
     console.log("YAS", this.submitted);
     this._dataService.getUser()
+    this.newPerson = {
+      email: '',
+      fullname: '',
+      displayname: '',
+      password: ''
+    }
   }
 
   ngOnInit() {

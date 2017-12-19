@@ -5,20 +5,20 @@ module.exports = (function () {
 
     return {
         index: function (req, res) {
-            Tema.find({}, function (err, Team) {
+            Team.find({}, function (err, Team) {
                 res.render('index', {
                     team: Team
                 });
             });
         },
-
+  
 
         createTeam: function (req, res) {
-            console.log('HEY, YOURE CREATING....')
+            console.log('HEY, YOURE CREATING....A TEAM')
             var teams = new Team();
             teams.teamName = req.body.teamName;
             teams._captain = req.body._captain;
-            teams._user = req.body._user;
+            // teams._user = req.body._user;
             teams.save(function (error, team) {
                 console.log('THIS TEAM IS', teams)
                 if (error) {
