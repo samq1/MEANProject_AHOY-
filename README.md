@@ -2,6 +2,10 @@
 Slack Web Application using MEAN Stack
 ## Overview
 Slack helps all of team's communication together, giving everyone a shared workspace where conversations are organized and accessible. This project contains Javascript, Angular 4, Node.js, and Socket.io. This project timeline: 1 Week; SCRUM methodology.
+
+## Usage
+`` git clone: https://github.com/samq1/MEANProject_AHOY-.git ``
+
 ## Dependencies
 ``` 
 "bcryptjs": "^2.4.3",
