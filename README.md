@@ -25,6 +25,6 @@ Slack helps all of team's communication together, giving everyone a shared works
 - Twitter Boostrap
 
 ![alt text](Ahoy_1.png)
-![alt text](Ahoy_3.png)
 ![alt text](Ahoy_5.png)
+![alt text](Ahoy_3.png)
 
