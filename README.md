@@ -23,3 +23,5 @@ Slack helps all of team's communication together, giving everyone a shared works
 - Angular 4
 - Socket.io
 - Twitter Boostrap
+
+![alt text](Ahoy!.png)
